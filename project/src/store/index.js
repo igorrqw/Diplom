@@ -1,9 +1,13 @@
 import { createStore } from "vuex";
+
+
+
 import {
   KinopoiskDev,
   Filter,
   MovieFields,
 } from "@openmoviedb/kinopoiskdev_client";
+import { KP_API_KEY } from '@/constants/index.js'
 
 export default createStore({
   state: {
@@ -38,7 +42,7 @@ export default createStore({
 
   actions: {
     async GET_FILMS(ctx, films) {
-      const kp = new KinopoiskDev("SHF3ZR0-Q2AM28B-JNXX250-NS3ZYX2");
+      const kp = new KinopoiskDev(KP_API_KEY);
       const query = {
         selectFields: ["id", "name", "rating", "poster", "year", "genres.name"],
         year: "2020-2023",
@@ -57,7 +61,7 @@ export default createStore({
     },
 
     async GET_CARTOONS(contx, cartoons) {
-      const kp = new KinopoiskDev("SHF3ZR0-Q2AM28B-JNXX250-NS3ZYX2");
+      const kp = new KinopoiskDev(KP_API_KEY);
       const query = {
         selectFields: ["id", "name", "rating", "poster", "year", "genres.name"],
         year: "2007-2020",
@@ -76,7 +80,7 @@ export default createStore({
     },
 
     async GET_SERIALS(contx, serials) {
-      const kp = new KinopoiskDev("SHF3ZR0-Q2AM28B-JNXX250-NS3ZYX2");
+      const kp = new KinopoiskDev(KP_API_KEY);
       const query = {
         selectFields: [
           "id",

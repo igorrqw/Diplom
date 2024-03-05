@@ -8,7 +8,7 @@
         <div> {{ item.name }}</div>
       </div>
     </div>
-  </template>
+</template>
   <script>
   
   

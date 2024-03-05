@@ -3,6 +3,10 @@
     <h1>Фильмы</h1>
   </div>
   <div class="collection__list center">
+    <ul>
+      <router-link tag="li" v-for="item in FilmsList" :to="`/film/${item.id}`" :key="film">
+        <a> {{ item.id }}           </a></router-link>
+    </ul>
     <div class="films" v-for="item in FilmsList">
       <div> <img v-bind:src="item.poster.url" alt=""> </div>
       <div> {{ item.name }}</div>
