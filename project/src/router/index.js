@@ -7,6 +7,7 @@ import SearchPage from "@/pages/SearchPage.vue";
 import СontactsPage from "@/pages/СontactsPage.vue";
 import Error404 from "@/pages/Error404.vue";
 import Film from "@/components/HomeComponets/Film.vue";
+// import Serials from "@/components/HomeComponets/Serials.vue";
 
 export default createRouter({
   history: createWebHistory(process.env.BASE_URL),
@@ -35,9 +36,19 @@ export default createRouter({
     },
 
     {
+      path: "/series/:id",
+      component: Film,
+    },
+
+    {
       path: "/cartoons",
       component: CartoonsPage,
       alias: "/",
+    },
+
+    {
+      path: "/cartoons/:id",
+      component: Film,
     },
 
     {

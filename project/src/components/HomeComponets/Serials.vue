@@ -2,12 +2,16 @@
     <div>
         <h1>Сериалы</h1>
     </div>
-    <div class="collection__list center">
-        <div class="films" v-for="item in SerialsList">
-            <div> <img v-bind:src="item.poster.url" alt=""> </div>
-            <div> {{ item.name }}</div>
+    
+    <ul>
+        <div class="collection__list center">
+            <router-link class="films" v-for="item in SerialsList" :to="`/series/${item.id}`" :key="series">
+                <div> <img v-bind:src="item.poster.url" alt=""> </div>
+                <div> {{ item.name }}</div>
+            </router-link>
         </div>
-    </div>
+    </ul>
+
 </template>
 <script>
 
@@ -28,19 +32,9 @@ export default {
 }
 
 </script>
-  
+
 <style scoped lang="scss">
-.collection__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    grid-column-gap: 16px;
-    -webkit-column-gap: 16px;
-    -moz-column-gap: 16px;
-    column-gap: 16px;
-    grid-row-gap: 64px;
-    row-gap: 64px;
-    margin: 50px;
-}
+.collection__list {}
 
 img {
     width: 100px
