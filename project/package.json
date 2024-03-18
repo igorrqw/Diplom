@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "predeploy": "npm run build",
+    "predeploy": "set 'NODE_ENV=production' && npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
