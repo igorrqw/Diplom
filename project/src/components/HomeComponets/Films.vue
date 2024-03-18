@@ -1,23 +1,22 @@
 <template>
-  <div>
-    <h1>Фильмы</h1>
-  </div>
-  <div class="collection__list center">
-    <ul>
-      <router-link class="films" v-for="item in FilmsList" :to="`/film/${item.id}`" :key="film">
-        <div> <img v-bind:src="item.poster.url" alt=""> </div>
-        <div> {{ item.name }}</div>
-        <div> Рейтинг {{ Math.round(item.rating.kp) }}</div>
-      </router-link>
-    </ul>
-  </div>
+    <h2 class="display-6">Фильмы</h2>
 
+    <div v-if="this.$store.getters.LOADING" class="d-flex justify-content-center loader">
+          <div class="spinner-border" role="status">
+              <span class="visually-hidden">Загрузка...</span>
+          </div>
+    </div>
+    <FilmsList v-if="FilmsList && this.$store.getters.LOADING === false" :filmsList="FilmsList"/>
 </template>
-<script>
 
+<script>
+import FilmsList from "../FilmsList.vue";
 
 export default {
   name: 'HelloWorld',
+  components: {
+    FilmsList
+  },
   computed: {
     FilmsList() {
       return this.$store.getters.FILMS
@@ -25,11 +24,9 @@ export default {
   },
 
   async mounted() {
-    this.$store.dispatch('GET_FILMS');
+      this.$store.dispatch('GET_FILMS');
   }
-
 }
-
 </script>
 
 <style scoped lang="scss">

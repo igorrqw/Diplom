@@ -1,20 +1,15 @@
 <template lang="">
-    <div>
-        <HeaderProject />
-        <footerProject />
-    </div>
+<Serials />
 </template>
+
 <script>
-
-import HeaderProject from '@/components/HeaderProject.vue'
-import footerProject from '@/components/footerProject.vue'
-
-
+import Serials from '@/components/HomeComponets/Serials.vue'
 export default {
     name: 'sireis',
-    components: { HeaderProject, footerProject, }
+    components: { Serials }
 }
 </script>
+
 <style lang="scss">
 * {
     margin: 0;

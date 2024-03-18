@@ -1,18 +1,13 @@
 <template lang="">
     <div>
-        <HeaderProject />
-        <footerProject />
+        <Films />
     </div>
 </template>
 <script>
-
-import HeaderProject from '@/components/HeaderProject.vue'
-import footerProject from '@/components/footerProject.vue'
-
-
+import Films from '@/components/HomeComponets/Films.vue'
 export default {
     name: 'filmspage',
-    components: { HeaderProject, footerProject, }
+    components: { Films}
 }
 </script>
 <style lang="scss">

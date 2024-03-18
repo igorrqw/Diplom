@@ -1,18 +1,11 @@
 <template lang="">
-    <div>
-        <HeaderProject />
-        <footerProject />
-    </div>
+    <Cartoons />
 </template>
 <script>
-
-import HeaderProject from '@/components/HeaderProject.vue'
-import footerProject from '@/components/footerProject.vue'
-
-
+import Cartoons from '@/components/HomeComponets/Cartoons.vue'
 export default {
     name: 'cartoons',
-    components: { HeaderProject, footerProject, }
+    components: { Cartoons}
 }
 </script>
 <style lang="scss">

@@ -1,7 +1,7 @@
 <template lang="">
     <div>
         <div class="header_nav">
-
+          Footer
       </div>
     </div>
 </template>
@@ -11,5 +11,5 @@ export default {
 }
 </script>
 <style lang="">
-    
+
 </style>
