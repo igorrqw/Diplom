@@ -18,7 +18,7 @@
             </button>
         </div>
     </div>
-
+<!-- 11111111111111111111111111111111 -->
     <div v-if="typeSearch==='advanced'" class="content-block advanced-search-block">
         <h2 class="display-6">Расширенный поиск</h2>
         <div class="content-block">
