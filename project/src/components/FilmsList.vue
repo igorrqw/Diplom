@@ -1,32 +1,33 @@
 <template>
-    <div class="container content-block">
-        <div class="movies">
-            <router-link tag="div" class="movie" v-if="filmsList" v-for="item in filmsToDisplay" :to="`/film/${item.id}`" :key="item">
-              <div class="movie_cover">
-                    <img class="" v-bind:src="item.poster?.previewUrl||item.poster||item.poster?.url" alt="">
-                    <div class="movie_title"> "{{ item.name }}"</div>
-                    <div class="movie_rating">Рейтинг: {{String(item.rating.kp).slice(0, 3)}}</div>
-                    <div class="movie_dark">Год выхода: {{item.year}}</div>
-              </div>
-            </router-link>
+  <div class="container content-block">
+    <div class="movies">
+      <router-link tag="div" class="movie" v-if="filmsList" v-for="item in filmsToDisplay" :to="`/film/${item.id}`"
+        :key="item">
+        <div class="movie_cover">
+          <img class="" v-bind:src="item.poster?.previewUrl || item.poster || item.poster?.url" alt="">
+          <div class="movie_title"> "{{ item.name }}"</div>
+          <div class="movie_rating">Рейтинг: {{ getRating(item) }}</div>
+          <div class="movie_dark">Год выхода: {{ item.year }}</div>
         </div>
+      </router-link>
     </div>
+  </div>
 
-    <nav class="pagination">
-        <ul class="pagination">
-            <li class="page-item" :class="{active: currentPage === index}" v-for="index in totalPages" :key="index">
-              <a class="page-link" v-on:click="setCurrentPage(index)">{{ index }}</a>
-            </li>
-        </ul>
-    </nav>
+  <nav class="pagination">
+    <ul class="pagination">
+      <li class="page-item" :class="{ active: currentPage === index }" v-for="index in totalPages" :key="index">
+        <a class="page-link" v-on:click="setCurrentPage(index)">{{ index }}</a>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
 export default {
   props: {
-    filmsList:{
+    filmsList: {
       type: Array,
-      default:[]
+      default: []
     }
   },
   data() {
@@ -51,9 +52,19 @@ export default {
   methods: {
     setCurrentPage(pageNumber) {
       this.currentPage = pageNumber;
+    },
+    getRating(film) {
+      if (film.rating.kp) {
+        return this.transfomRating(film.rating.kp)
+      } else {
+        return this.transfomRating(film.rating)
+      }
+    },
+    transfomRating(rating) {
+      return String(rating).slice(0, 3)
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -64,58 +75,64 @@ export default {
 .content-block {
   margin-top: 50px;
 }
+
 .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
   & a {
     & :active {
       background-color: $color-red;
       border-color: $color-red;
     }
+
     & :focus {
       background-color: $color-red;
       border-color: $color-red;
     }
+
     cursor: pointer;
   }
 }
 
 .active {
-  .page-link{
+  .page-link {
     background-color: $color-red;
-        border-color: $color-red;
+    border-color: $color-red;
+
     &:active {
       background-color: $color-red;
       border-color: $color-red;
     }
+
     & :focus {
       background-color: $color-red;
       border-color: $color-red;
     }
   }
 }
+
 .movies {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .movie {
-    width: 200px;
-    color: $color-white;
+  width: 200px;
+  color: $color-white;
 }
+
 .movie_title {
   text-align: center;
 }
-/* .movie_rating {
-  margin-top: 10px
-} */
+
 .movie_cover {
   height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 </style>

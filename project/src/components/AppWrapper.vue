@@ -15,26 +15,27 @@ export default {
 
 .app-wrapper {
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 20px 20px;
     background-color: #141414;
-    min-height: 100vh;
+    min-height: 80vh;
     height: max-content;
     overflow: hidden;
 
+
     @media (min-width: $mobile-width) {
-        padding: 0 30px;
+        padding: 0 30px 20px;
     }
 
     @media (min-width: $tablet-width) {
-        padding: 0 50px;
+        padding: 0 50px 20px;
     }
 
     @media (min-width: $desktop-width) {
-        padding: 0 80px;
+        padding: 0 80px 20px;
     }
 
     @media (min-width: $large-desktop-width) {
-        padding: 0 100px;
+        padding: 0 100px 20px;
     }
 }
 </style>

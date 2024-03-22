@@ -1,36 +1,38 @@
 <template>
-    <h2 class="display-6">Мультики</h2>
+    <h2 class="display-6">Сериалы</h2>
 
     <div v-if="this.$store.getters.LOADING" class="d-flex justify-content-center loader">
           <div class="spinner-border" role="status">
               <span class="visually-hidden">Загрузка...</span>
           </div>
     </div>
-    <FilmsList v-if="CartoonsList && this.$store.getters.LOADING === false" :filmsList="CartoonsList"/>
+    <FilmsList v-if="SerialsList && this.$store.getters.LOADING === false" :filmsList="SerialsList"/>
 </template>
-  <script>
-  import FilmsList from "../FilmsList.vue";
-  
-  export default {
-    name: 'Cartoons',
-    components: { FilmsList },
-    computed: {
-      CartoonsList(){
-        return this.$store.getters.CARTOONS
-      },
-  
+<script>
+import FilmsList from "./FilmsList.vue";
+
+export default {
+    name: 'Serials',
+        components: {
+    FilmsList
     },
-  
+    computed: {
+        SerialsList() {
+            return this.$store.getters.SERIALS
+        },
+
+    },
+
     async mounted() {
-      this.$store.dispatch('GET_CARTOONS')
+        this.$store.dispatch('GET_SERIALS')
     }
+
+}
+
+</script>
   
-  }
-  
-  </script>
-  
-  <style scoped lang="scss">
-  .collection__list {
+<style scoped lang="scss">
+.collection__list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     grid-column-gap: 16px;
@@ -40,28 +42,27 @@
     grid-row-gap: 64px;
     row-gap: 64px;
     margin: 50px;
-  }
-  
-  img {
+}
+
+img {
     width: 100px
-  }
-  
-  h3 {
+}
+
+h3 {
     margin: 40px 0 0;
-  }
-  
-  ul {
+}
+
+ul {
     list-style-type: none;
     padding: 0;
-  }
-  
-  li {
+}
+
+li {
     display: inline-block;
     margin: 0 10px;
-  }
-  
-  a {
+}
+
+a {
     color: #42b983;
-  }
-  </style>
-  
+}
+</style>

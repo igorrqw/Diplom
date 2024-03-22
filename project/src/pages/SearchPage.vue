@@ -12,6 +12,7 @@ export default {
     components: { PoiskComponent }
 }
 </script>
+
 <style lang="scss">
 * {
     margin: 0;

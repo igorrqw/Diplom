@@ -11,8 +11,7 @@
             <div class="description-title">Описание:</div>
             <div class="description-text">{{dataFilm.description}}</div>
         </div>
-
-        <!-- <div class="movie_title"> {{ dataFilm.alternativeName }}</div> -->
+        
         <div class="person-block">
             <div class="description-title"> 
                         Актеры
@@ -63,7 +62,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import '../../styles/variables.scss';
+@import '../styles/variables.scss';
 
 .movie-container {
     display: flex;
@@ -103,10 +102,11 @@ export default {
 .person-block {
     margin-top: 40px;
 }
+
 .back-button {
     width: 100%;
-    /* color: red; */
 }
+
 .btn {
     margin-bottom: 30px;
   color: $color-white;

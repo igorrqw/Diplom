@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Serials from '@/components/HomeComponets/Serials.vue'
+import Serials from '@/components/Serials.vue'
 export default {
     name: 'sireis',
     components: { Serials }

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import FilmsList from "../FilmsList.vue";
+import FilmsList from "./FilmsList.vue";
 
 export default {
   name: 'HelloWorld',

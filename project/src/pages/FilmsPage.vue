@@ -4,7 +4,7 @@
     </div>
 </template>
 <script>
-import Films from '@/components/HomeComponets/Films.vue'
+import Films from '@/components/Films.vue'
 export default {
     name: 'filmspage',
     components: { Films}

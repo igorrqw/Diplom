@@ -4,8 +4,8 @@
     <AppContainer>
       <router-view />
     </AppContainer>
-    <Footer />
   </AppWrapper>
+  <Footer />
 </template>
 
 <script>
@@ -16,7 +16,7 @@ import AppWrapper from '@/components/AppWrapper.vue'
 import AppContainer from '@/components/AppContainer.vue'
 export default {
   components: {
-    Header, Footer, AppWrapper, AppContainer
+    Header, AppWrapper, AppContainer, Footer
   }
 };
 </script>

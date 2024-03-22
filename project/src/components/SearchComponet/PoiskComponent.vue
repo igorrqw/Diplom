@@ -18,7 +18,6 @@
             </button>
         </div>
     </div>
-<!-- 11111111111111111111111111111111 -->
     <div v-if="typeSearch==='advanced'" class="content-block advanced-search-block">
         <h2 class="display-6">Расширенный поиск</h2>
         <div class="content-block">
@@ -43,7 +42,7 @@
 
         <div class="btn-block content-block">
             <button class="btn" type="button" v-on:click="chedgeFormSearch()">
-                Поиск по названию
+                Сменить тип поиска
             </button>
 
             <button class="btn" type="button" v-on:click="advancedSearch()">
@@ -67,8 +66,6 @@
 import {
     KinopoiskDev,
     MovieQueryBuilder,
-    SPECIAL_VALUE,
-    SORT_TYPE,
 } from '@openmoviedb/kinopoiskdev_client';
 import VueSlider from "vue-slider-component";
 import "vue-slider-component/theme/antd.css";

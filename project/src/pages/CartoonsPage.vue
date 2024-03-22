@@ -2,7 +2,7 @@
     <Cartoons />
 </template>
 <script>
-import Cartoons from '@/components/HomeComponets/Cartoons.vue'
+import Cartoons from '@/components/Cartoons.vue'
 export default {
     name: 'cartoons',
     components: { Cartoons}

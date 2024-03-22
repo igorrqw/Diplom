@@ -2,10 +2,10 @@
     <div class="nav-wrapper">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <router-link class="navbar-brand" :to="`/homepage/`">
             <img class="logo-img" :src="require('../assets/logo.png')" alt="logo"/>
             <div class="logo__text">MovieBase</div>
-        </a>
+        </router-link>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,9 +26,6 @@
                 <li class="nav-item">
                     <router-link class="nav-link" to="/search">Поиск</router-link>
                 </li>
-                <li class="nav-item">
-                    <router-link class="nav-link" to="/contacts">Контакты</router-link>
-                </li>
             </ul>
         </div>
     </div>
@@ -45,32 +42,36 @@ export default {
 
 <style lang="scss">
 @import '../styles/variables.scss';
-.logo-img{
+
+.logo-img {
     width: 60px;
     height: 60px;
 }
-.container-fluid{
+
+.container-fluid {
     padding: 0;
 }
-.navbar-brand{
+
+.navbar-brand {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.navbar-nav{
+.navbar-nav {
     width: 100%;
     justify-content: space-between;
 }
 
 .router-link-active {
-    color: $color-white !important; /* Цвет активной ссылки */
+    color: $color-white !important;
 }
 
 .nav-link {
     color: $color-main;
 }
-.nav-wrapper{
+
+.nav-wrapper {
     background-color: #212529;
     padding: 0 20px;
 
@@ -90,25 +91,10 @@ export default {
         padding: 0 100px;
     }
 }
-.navbar{
+
+.navbar {
     max-width: 1200px;
     margin: 0 auto;
-    /* padding: 0 20px;
 
-    @media (min-width: $mobile-width) {
-        padding: 0 30px;
-    }
-
-    @media (min-width: $tablet-width) {
-        padding: 0 50px;
-    }
-
-    @media (min-width: $desktop-width) {
-        padding: 0 80px;
-    }
-
-    @media (min-width: $large-desktop-width) {
-        padding: 0 100px;
-    } */
 }
 </style>
